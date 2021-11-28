@@ -1,23 +1,12 @@
-<MyGrid>
-    GridLayout:
-        cols:1
-        size:root.width-100,root.height-100
-        pos:100,100
+<Button>:
+    font_size:40
+    colors:0.3,0.6,0.7,1
 
-        GridLayout:
-            cols:2
+<FloatLayout>:
+    pos_hint:{"x":0.5,"y","top","bottom","left","right"}
+    text:"tech with"
+    Button:
+        text:"Tech With Tim"
 
-            Label:
-                text:"Name:"
-
-            TextInput:
-                Multiline:False
-
-            Label:
-                text:"Email:"
-
-            TextInput:
-                multiline:False
-
-        Button :
-            text:"Submit"
+    Button:
+        text:"Tim"
