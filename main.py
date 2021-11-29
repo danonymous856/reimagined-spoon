@@ -1,28 +1,26 @@
 from kivy import *
 from kivy.app import App
-from kivy.uix import widget
+from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty
-from kivy.uix.floatlayout import FloatLayout
 
+class Touch(Widget):
+    btn=ObjectProperty(None)
 
-class MyGrid(widget):
-    name = ObjectProperty(None)
-    email = ObjectProperty(None)
-    pass
-
-    def btn(self,instance):
-        print("Nmae:",self.name.text,"email:",self.email.text)
-        self.name.text = ""
-        self.email.text = ""
-
-def btn(instance):
-    print("Run!")
+    def on_touch_down(self, touch):
+        print("Mouse Down",touch)
+        self.btn.opacity = 0.5
+        pass
+    def on_touch_up(self, touch):
+        print("Mouse Up",touch)
+        pass
+    def on_touch_move(self, touch):
+        print("Mouse Move",touch)
+        self.btn.opacity = 1
+        pass
 
 class MyApp(App):
     def build(self):
-        return MyGrid()
+        return Touch()
 
-    def btn(self):y
-
-if __name__=="__main__":
+if  __name__ == "__main__" :
     MyApp().run()
