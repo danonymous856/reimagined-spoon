@@ -24,3 +24,4 @@ class Database:
 
     def addd_user(self,email,password,name):
         if email.strip() not in self.users:
+            print("Go Back")
